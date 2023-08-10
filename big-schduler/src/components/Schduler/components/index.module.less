@@ -2,7 +2,6 @@
   // display: flex;
   white-space: nowrap;
   user-select: none;
-  position: relative;
 
   .item {
     border: 1px solid #eee;
@@ -11,6 +10,20 @@
     width: 100px;
     height: 100px;
     text-indent: -102px;
+  }
+}
+
+.content {
+  position: relative;
+  white-space: nowrap;
+  user-select: none;
+
+  .item {
+    border: 1px solid #eee;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.05);
@@ -25,7 +38,7 @@
     }
 
     &.hasEvent {
-      background-color: pink
+      // background-color: pink
     }
   }
 }

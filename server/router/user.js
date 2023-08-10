@@ -1,15 +1,22 @@
 const express = require('express')
 const fs = require('fs')
 const {sendJson} = require('../utils/requestUtils')
+const db = require('../database/index')
 
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  res.send('user-router')
+  db.query('select * from user', (err, data) => {
+    res.send({
+      data
+    })
+  })
 })
 
 router.post('/register', (req, res) => {
   // 模拟注册流程
+  // insert into user (create_time, name, sex)
+  // values (now(), '测试', 2)
   const {username, password} = req.body
   const filePath = 'database/user.json'
   if(!username || !password) {

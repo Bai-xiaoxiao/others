@@ -52,7 +52,7 @@ app.use('/user', userRouter)
 
 // 未配置的路由都还进入这里
 app.get('*', (req, res) => {
-  res.status(404).send('not found')
+  res.status(404).send('ohhhhhhhhhhhhhhh it\'s not found')
   // 便捷设置如下，结果等同
   // res.sendStatus(404)
 })
